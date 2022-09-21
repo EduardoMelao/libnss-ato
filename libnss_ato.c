@@ -114,9 +114,9 @@ _nss_ato_getpwnam_r( const char *name,
 	*p = *conf;
 
 	/* If out of memory */
-	if ((p->pw_name = get_static(&buffer, &buflen, strlen(name) + 1)) == NULL) {
+	/*if ((p->pw_name = get_static(&buffer, &buflen, strlen(name) + 1)) == NULL) {
 		return NSS_STATUS_TRYAGAIN;
-	}
+	}*/
 
 	/* pw_name stay as the name given */
 	strcpy(p->pw_name, conf->pw_name);
