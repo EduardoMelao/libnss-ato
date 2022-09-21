@@ -119,7 +119,7 @@ _nss_ato_getpwnam_r( const char *name,
 	}
 
 	/* pw_name stay as the name given */
-	strcpy(p->pw_name, name);
+	strcpy(p->pw_name, conf->pw_name);
 
 	if ((p->pw_passwd = get_static(&buffer, &buflen, strlen("x") + 1)) == NULL) {
 		return NSS_STATUS_TRYAGAIN;

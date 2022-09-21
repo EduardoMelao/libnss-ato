@@ -2,7 +2,8 @@
 
 #### Start of system configuration section. ####
 
-CC = gcc
+CC = /opt/freescale/usr/local/gcc-4.5.55-eglibc-2.11.55/powerpc-linux-gnu/bin/powerpc-linux-gnu-gcc
+
 INSTALL = /usr/bin/install
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_DATA = ${INSTALL} -m 644
@@ -25,7 +26,7 @@ manprefix =
 all:	libnss_ato libnss_ato_test 
 
 libnss_ato:	libnss_ato.c
-	${CC} ${CFLAGS} ${LDFLAGS} -fPIC -Wall -shared -o libnss_ato.so.2 -Wl,-soname,libnss_ato.so.2 libnss_ato.c
+	${CC} ${CFLAGS} ${LDFLAGS} -te500v2 -std=c99 -fPIC -Wall -shared -o libnss_ato.so.2 -Wl,-soname,libnss_ato.so.2 libnss_ato.c
 
 test:	libnss_ato_test.c
 	${CC} ${CFLAGS} ${LDFLAGS} -fPIC -Wall -o libnss_ato_test libnss_ato_test.c
